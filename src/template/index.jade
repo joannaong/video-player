@@ -1,0 +1,104 @@
+//- vars
+- var s3_path = "../_s3/"
+
+doctype 5
+html
+	head
+		title Video Share
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no')
+		link(rel="stylesheet", href='css/main.css', type='text/css')
+
+	body
+		#fb-root
+	
+		//- content
+		.wrapper
+			article#vision
+				.video-social-modal
+					span.video-social
+						h2 Share This Moment
+						button(
+							data-vid="vision",
+							data-social="twitter",
+							data-twurl="http://google.ca",
+							data-twtext="VISION twitter text") tw pic
+						button(
+							data-vid="vision",
+							data-social="facebook",
+							data-fbname="VISION Video Share name",
+							data-fblink="http://dev.thesecretlocation.com/OPEN/videoShareFrame/demo",
+							data-fbpicture="http://dev.thesecretlocation.com/OPEN/videoShareFrame/_s3/img/vision/1.jpg",
+							data-fbcaption="fb caption",
+							data-fbdescription="fb description") fb pic
+						button(
+							data-vid="vision",
+							data-social="tumblr"
+							data-tmurl="http://google.ca",
+							data-tmcaption="VISION tumblr caption") tm pic
+						button(
+							data-vid="vision",
+							data-social="twitter",
+							data-twurl="http://google.ca",
+							data-twtext="VISION twitter text") tw vid
+						button(
+							data-vid="vision",
+							data-social="facebook",
+							data-fbname="VISION Video Share name",
+							data-fblink="http://dev.thesecretlocation.com/OPEN/videoShareFrame/demo",
+							data-fbpicture="http://dev.thesecretlocation.com/OPEN/videoShareFrame/_s3/img/vision/1.jpg",
+							data-fbcaption="fb caption",
+							data-fbdescription="fb description") fb vid
+						button(
+							data-vid="vision",
+							data-social="tumblr"
+							data-tmurl="http://google.ca",
+							data-tmcaption="VISION tumblr caption") tm vid
+				.video-c
+					iframe(
+						src="https://www.youtube.com/embed/jEjUAnPc2VA?enablejsapi=1&html5=1&showinfo=0", 
+						frameborder="0", 
+						allowfullscreen, 
+						id="vision-video", 
+						data-vid="vision",
+						data-framerate="23.976",
+						data-imagepath="http://dev.thesecretlocation.com/OPEN/_s3/img/pigeon/",
+						class="joShare")
+
+			article#night
+				.video-social-modal
+					span.video-social
+						h2 Share This Moment
+						button(
+							data-vid="night",
+							data-social="twitter",
+							data-twurl="http://google.ca",
+							data-twtext="night twitter text") tw
+						button(
+							data-vid="night",
+							data-social="facebook",
+							data-fbname="night Video Share name",
+							data-fblink="http://dev.thesecretlocation.com/OPEN/videoShareFrame/demo",
+							data-fbpicture="http://dev.thesecretlocation.com/OPEN/videoShareFrame/_s3/img/night/1.jpg",
+							data-fbcaption="fb caption",
+							data-fbdescription="fb description") fb
+						button(
+							data-vid="night",
+							data-social="tumblr"
+							data-tmurl="http://google.ca",
+							data-tmcaption="night tumblr caption") tm
+				.video-c
+					iframe(
+						src="https://www.youtube.com/embed/VFlcO9J9b0Y?enablejsapi=1&html5=1&showinfo=0", 
+						frameborder="0", 
+						allowfullscreen, 
+						id="night-video", 
+						data-vid="night",
+						data-framerate="23.976",
+						data-imagepath="http://dev.thesecretlocation.com/OPEN/_s3/img/pigeon/",
+						class="joShare")
+					
+		//- scripts
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+		script(src="js/youShare.js")
+		//- script(src="js/app.js")

@@ -1,0 +1,103 @@
+// compass
+@import 'compass';
+@import 'compass/reset';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+
+// helpers
+@mixin opacity-visibility($opacity:0, $visibility:hidden) {
+	opacity: $opacity;
+	visibility: $visibility;
+	@include transition(all 200ms ease-in-out);
+}
+@mixin gradient($from, $to) {
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.9)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+// vars
+$media-tablet: 768px;
+$video-socialbtn-size: 50px;
+
+// base
+body {
+	font-family: "Helvetica";
+	background: #eee;
+}
+.wrapper {
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+article {
+	position: relative;
+	width: 96%;
+	margin: 2%;
+}
+
+// you need this.
+.video-social-modal {
+	@include opacity-visibility();
+	&.visible {
+		@include opacity-visibility(1, visible);
+	}
+	h2 {
+		color: white;
+		margin: 10px 0;
+		font-size: 14px;
+	}
+	position: absolute;
+	// background: rgba(0,0,0,0.7);
+	@include gradient(rgba(0,0,0,0.7),blue);
+	left: 0;
+	top: 0;
+	z-index: 99;
+	width: 100%;
+	height: calc(100% - 35px);
+	text-align: center;
+
+	.video-social {
+		display: inline-block;
+		position: relative;
+		top: calc(50% - 50px);
+	}
+
+	button {
+		border: 0;
+		border: 2px solid white;
+		background: none;
+		cursor: pointer;
+		color: white;
+		width: $video-socialbtn-size;
+		height: $video-socialbtn-size;
+		border-radius: $video-socialbtn-size;
+		margin: 0 5px;
+		font-size: 20px;
+
+		@include transition(all 200ms ease-in-out);
+		&:hover {
+			@include scale(1.1);
+		}
+		&:focus, &:active, &:visited {
+			outline: none;
+		}
+	}
+}
+.video-c {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	iframe, video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
