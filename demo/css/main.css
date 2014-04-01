@@ -1,0 +1,133 @@
+/* line 13, ../../src/css/main.scss */
+body {
+  font-family: "Helvetica";
+  background: #eee;
+}
+
+/* line 17, ../../src/css/main.scss */
+.wrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 30px auto;
+}
+
+/* line 22, ../../src/css/main.scss */
+article {
+  position: relative;
+  width: 96%;
+  display: inline-block;
+  margin: 2%;
+}
+@media (max-width: 768px) {
+  /* line 22, ../../src/css/main.scss */
+  article {
+    width: 96%;
+  }
+}
+
+/* line 31, ../../src/css/main.scss */
+h1, h2, body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 35, ../../src/css/main.scss */
+hgroup {
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+/* line 40, ../../src/css/main.scss */
+hgroup h1 {
+  float: left;
+  padding-top: 5px;
+  color: #641490;
+  font-size: 18px;
+}
+/* line 46, ../../src/css/main.scss */
+hgroup .video-social {
+  float: right;
+}
+/* line 48, ../../src/css/main.scss */
+hgroup .video-social button {
+  border: 0;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  color: white;
+  width: 25px;
+  height: 25px;
+  margin: 0 3px;
+  font-size: 12px;
+  border-radius: 25px;
+}
+/* line 58, ../../src/css/main.scss */
+hgroup .video-social button:hover {
+  background: rgba(100, 20, 144, 0.7);
+}
+/* line 61, ../../src/css/main.scss */
+hgroup .video-social button:focus, hgroup .video-social button:active, hgroup .video-social button:visited {
+  border: none;
+  outline: none;
+}
+
+/* line 68, ../../src/css/main.scss */
+.video-c {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+/* line 73, ../../src/css/main.scss */
+.video-c iframe, .video-c video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 81, ../../src/css/main.scss */
+.video-controls {
+  z-index: 9999;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 10px;
+  width: 100%;
+}
+/* line 88, ../../src/css/main.scss */
+.video-controls .seek {
+  background: rgba(100, 20, 144, 0.65);
+  height: 10px;
+  position: relative;
+}
+/* line 92, ../../src/css/main.scss */
+.video-controls .seek .seek-head {
+  position: absolute;
+  height: 10px;
+  background: #641490;
+}
+/* line 97, ../../src/css/main.scss */
+.video-controls .seek .seek-hover {
+  border: 2px solid #641490;
+  width: 90px;
+  height: 51px;
+  position: absolute;
+  bottom: 20px;
+  background-size: 100%;
+  margin-left: -45px;
+}
+/* line 105, ../../src/css/main.scss */
+.video-controls .seek .seek-hover:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #641490;
+  left: 35px;
+}

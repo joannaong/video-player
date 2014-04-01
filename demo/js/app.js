@@ -1,23 +1,5 @@
 $(function() {
 
-  $("#detroit-video").videoShareFrame({
-  	imagePath:"http://dev.thesecretlocation.com/OPEN/videoShareFrame/_s3/img/detroit/"
-  });
-
-  // $("#vision-video").videoShareFrame({
-  // 	imagePath:"http://dev.thesecretlocation.com/OPEN/videoShareFrame/_s3/img/vision/"
-  // });
-
-  $("#moments-video").videoShareFrame({
-  	imagePath:"http://dev.thesecretlocation.com/OPEN/videoShareFrame/_s3/img/moments/"
-  });
-
-  $("#night-video").videoShareFrame({
-  	imagePath:"http://dev.thesecretlocation.com/OPEN/videoShareFrame/_s3/img/night/"
-  });
-
-
-
 	window.requestAnimFrame = (function(){
 	  return  window.requestAnimationFrame       ||
 	          window.webkitRequestAnimationFrame ||
@@ -49,8 +31,9 @@ $(function() {
 	  var seekBarWidth = $(this).width();
 	  var mouseTime = (x * video.duration) / seekBarWidth;
 	  var frameNum = Math.round(mouseTime * 23.976);
+	  var videoImgpath = $("video").data("imgpath");
 
-	  $(".seek-hover").css("background-image","url('http://localhost/videoShareFrame/_s3/img/detroit/"+frameNum+".jpg')");
+	  $(".seek-hover").css("background-image","url('"+videoImgpath+frameNum+".jpg')");
 		$(".seek-hover").css("left",x);
 	});
 
@@ -58,7 +41,6 @@ $(function() {
 	function getXYpos(elm) {
 	  x = elm.offsetLeft;        // set x to elm’s offsetLeft
 	  y = elm.offsetTop;         // set y to elm’s offsetTop
-
 	  elm = elm.offsetParent;    // set elm to its offsetParent
 
 	  //use while loop to check if elm is null
